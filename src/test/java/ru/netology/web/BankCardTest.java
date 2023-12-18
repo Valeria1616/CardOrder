@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BankCardTest {
     private WebDriver driver;
@@ -42,8 +43,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -52,8 +55,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -62,8 +67,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -72,8 +79,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -82,9 +91,11 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actualText);
-    }
+        assertTrue(actualTextElement.isDisplayed());
+   }
 
     @Test
     public void shouldTestV6() /* Ошибка валидации в поле "Фамилия и имя". Ввод кириллицы с числом. */ {
@@ -92,8 +103,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -102,8 +115,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -112,8 +127,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Поле обязательно для заполнения", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -122,8 +139,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+00000000000");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -132,8 +151,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("79273334242");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -142,8 +163,10 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
-        var actualText = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim();
+        var actualTextElement = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub"));
+        var actualText = actualTextElement.getText().trim();
         assertEquals("Поле обязательно для заполнения", actualText);
+        assertTrue(actualTextElement.isDisplayed());
     }
 
     @Test
@@ -152,6 +175,6 @@ public class BankCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79273334242");
         driver.findElement(By.className("button")).click();
         boolean agreement = driver.findElement(By.cssSelector("[data-test-id=agreement].input_invalid")).isDisplayed();
-        assertEquals(true, agreement);
+        assertTrue(agreement);
     }
 }
